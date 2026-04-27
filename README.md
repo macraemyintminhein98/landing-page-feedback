@@ -1,8 +1,10 @@
 # Landing Page Feedback Service
 
-Submit your landing page URL and receive a concise, actionable 3-point conversion rate optimization (CRO) feedback report within 24 hours. Perfect for early-stage founders, solopreneurs, and indie hackers looking to improve their product's first impression.
+Get concise, actionable feedback on your landing page design and copy to boost conversions. Submit your URL and receive 3-5 bullet points of improvements within 24 hours. Ideal for early-stage founders, indie hackers, and small business owners.
 
-## How it Works:
-1. Enter your landing page URL.
-2. Complete secure payment via Stripe (not implemented in this HTML-only version).
-3. Receive a detailed 3-point feedback report via email within 24 hours.
+## How it works:
+1. Enter your landing page URL and an optional message.
+2. Complete a secure payment.
+3. Receive expert feedback directly to your email within 24 hours.
+
+Built by APEX.

@@ -1,1 +1,65 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>APEX Landing Page Feedback</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-gray-100 flex items-center justify-center min-h-screen"><div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center"><h1 class="text-2xl font-bold mb-4">Get Your Landing Page Feedback</h1><p class="text-gray-600 mb-6">Receive a 3-point CRO report for your landing page within 24 hours.</p><form id="feedback-form" class="space-y-4"><input type="url" id="landing-page-url" placeholder="Enter your landing page URL" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Get Feedback for $9.99</button></form><p class="mt-6 text-sm text-gray-500">Powered by APEX</p><script>document.getElementById('feedback-form').addEventListener('submit', async (e) => { e.preventDefault(); const url = document.getElementById('landing-page-url').value; /* In a real app, this would initiate Stripe Checkout */ alert(`Thank you for submitting ${url}! We'll be in touch shortly to process payment and deliver your feedback.`); /* Placeholder for Stripe integration */ });</script></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
+        <h1 class="text-3xl font-bold mb-4">Optimize Your Landing Page</h1>
+        <p class="text-gray-600 mb-6">Get concise, actionable feedback within 24 hours.</p>
+        
+        <form id="feedbackForm">
+            <div class="mb-4">
+                <label for="url" class="block text-left text-gray-700 text-sm font-bold mb-2">Your Landing Page URL:</label>
+                <input type="url" id="url" name="url" placeholder="https://yourpage.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-left text-gray-700 text-sm font-bold mb-2">Optional Message:</label>
+                <textarea id="message" name="message" rows="3" placeholder="Tell us what you're struggling with..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+                Get Feedback for $9.99
+            </button>
+        </form>
+        <p id="formStatus" class="mt-4 text-sm"></p>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const url = document.getElementById('url').value;
+            const message = document.getElementById('message').value;
+            const statusDiv = document.getElementById('formStatus');
+            statusDiv.textContent = 'Processing your request...';
+            statusDiv.className = 'mt-4 text-sm text-blue-600';
+
+            try {
+                // In a real scenario, this would initiate a Stripe checkout session
+                // and then, upon successful payment, send the data to a backend endpoint.
+                // For this example, we'll simulate success and show the next steps.
+                
+                await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
+                
+                // In a real app, successful payment would trigger this:
+                // fetch('/api/submit-feedback', { method: 'POST', body: JSON.stringify({ url, message }), headers: { 'Content-Type': 'application/json' }});
+                
+                statusDiv.textContent = 'Feedback request sent! Please complete your payment.';
+                statusDiv.className = 'mt-4 text-sm text-green-600';
+                
+                // Redirect or show Stripe checkout here
+                // Example: window.location.href = 'https://buy.stripe.com/test_checkout_link'; 
+                console.log('Simulating Stripe Checkout for:', { url, message });
+                alert('Redirecting to secure payment... (Simulated payment redirection for now)');
+
+            } catch (error) {
+                statusDiv.textContent = 'There was an error. Please try again.';
+                statusDiv.className = 'mt-4 text-sm text-red-600';
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>

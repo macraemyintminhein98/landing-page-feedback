@@ -3,60 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Feedback</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <title>Landing Page Feedback - Boost Your Conversions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg { background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); }
+    </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
-        <h1 class="text-3xl font-bold mb-4">Optimize Your Landing Page</h1>
-        <p class="text-gray-600 mb-6">Get concise, actionable feedback within 24 hours.</p>
-        
-        <form id="feedbackForm">
-            <div class="mb-4">
-                <label for="url" class="block text-left text-gray-700 text-sm font-bold mb-2">Your Landing Page URL:</label>
-                <input type="url" id="url" name="url" placeholder="https://yourpage.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            </div>
-            <div class="mb-6">
-                <label for="message" class="block text-left text-gray-700 text-sm font-bold mb-2">Optional Message:</label>
-                <textarea id="message" name="message" rows="3" placeholder="Tell us what you're struggling with..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-            </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
-                Get Feedback for $9.99
-            </button>
-        </form>
-        <p id="formStatus" class="mt-4 text-sm"></p>
-    </div>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="gradient-bg text-white p-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Apex Feedback</h1>
+            <nav>
+                <a href="#how-it-works" class="mx-2 hover:underline">How It Works</a>
+                <a href="#pricing" class="mx-2 hover:underline">Pricing</a>
+                <a href="#faq" class="mx-2 hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </header>
 
+    <main class="flex-grow container mx-auto p-8">
+        <section class="text-center my-12">
+            <h2 class="text-5xl font-extrabold text-gray-900 leading-tight mb-4">Unlock Your Landing Page's Potential</h2>
+            <p class="text-xl text-gray-700 mb-8">Concise, actionable feedback to turn visitors into customers.</p>
+            <a href="#pricing" class="gradient-bg text-white px-8 py-4 rounded-lg text-2xl font-bold hover:opacity-90 transition duration-300">Get Feedback Now - $9.99</a>
+        </section>
+
+        <section id="how-it-works" class="my-16 bg-white p-10 rounded-lg shadow-lg">
+            <h3 class="text-4xl font-bold text-center mb-10 text-gray-800">How It Works</h3>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 border rounded-lg shadow-sm">
+                    <h4 class="text-2xl font-semibold mb-3">1. Submit Your Page</h4>
+                    <p class="text-gray-600">After payment, securely share your landing page URL.</p>
+                </div>
+                <div class="p-6 border rounded-lg shadow-sm">
+                    <h4 class="text-2xl font-semibold mb-3">2. Expert Review</h4>
+                    <p class="text-gray-600">We analyze your page for conversion killers and boosters.</p>
+                </div>
+                <div class="p-6 border rounded-lg shadow-sm">
+                    <h4 class="text-2xl font-semibold mb-3">3. Receive Feedback</h4>
+                    <p class="text-gray-600">Get a 3-5 min Loom video + bullet summary in 24-48 hrs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="my-16 text-center">
+            <h3 class="text-4xl font-bold mb-10 text-gray-800">Simple Pricing</h3>
+            <div class="flex justify-center">
+                <div class="bg-white p-10 rounded-lg shadow-lg border-2 border-indigo-500 max-w-sm w-full">
+                    <h4 class="text-3xl font-bold mb-4">Single Page Review</h4>
+                    <p class="text-5xl font-extrabold text-indigo-600 mb-6">$9.99</p>
+                    <ul class="text-lg text-gray-700 list-disc list-inside text-left mb-8">
+                        <li>Personalized 3-5 min Loom video</li>
+                        <li>Actionable bullet-point summary</li>
+                        <li>Conversion-focused insights</li>
+                        <li>Delivered in 24-48 hours</li>
+                    </ul>
+                    <button id="checkout-button" class="gradient-bg text-white px-8 py-4 rounded-lg text-2xl font-bold hover:opacity-90 transition duration-300">Buy Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="my-16 bg-white p-10 rounded-lg shadow-lg">
+            <h3 class="text-4xl font-bold text-center mb-10 text-gray-800">Frequently Asked Questions</h3>
+            <div class="space-y-6">
+                <div class="border-b pb-4">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">What kind of landing pages do you review?</h4>
+                    <p class="text-gray-700">Any type! SaaS, e-commerce, personal portfolios, product launches, lead generation pages.</p>
+                </div>
+                <div class="border-b pb-4">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">How quickly will I receive my feedback?</h4>
+                    <p class="text-gray-700">Within 24-48 hours after you submit your URL post-payment.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">What's included in the feedback?</h4>
+                    <p class="text-gray-700">A private 3-5 minute Loom video walkthrough and a concise bullet-point summary focusing on headlines, CTAs, clarity, trust, and more.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="gradient-bg text-white p-6 text-center mt-auto">
+        <p>&copy; 2023 Apex Feedback. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://js.stripe.com/v3/"></script>
     <script>
-        document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const url = document.getElementById('url').value;
-            const message = document.getElementById('message').value;
-            const statusDiv = document.getElementById('formStatus');
-            statusDiv.textContent = 'Processing your request...';
-            statusDiv.className = 'mt-4 text-sm text-blue-600';
+        const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // Replace with your actual publishable key
+        const checkoutButton = document.getElementById('checkout-button');
 
-            try {
-                // In a real scenario, this would initiate a Stripe checkout session
-                // and then, upon successful payment, send the data to a backend endpoint.
-                // For this example, we'll simulate success and show the next steps.
-                
-                await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-                
-                // In a real app, successful payment would trigger this:
-                // fetch('/api/submit-feedback', { method: 'POST', body: JSON.stringify({ url, message }), headers: { 'Content-Type': 'application/json' }});
-                
-                statusDiv.textContent = 'Feedback request sent! Please complete your payment.';
-                statusDiv.className = 'mt-4 text-sm text-green-600';
-                
-                // Redirect or show Stripe checkout here
-                // Example: window.location.href = 'https://buy.stripe.com/test_checkout_link'; 
-                console.log('Simulating Stripe Checkout for:', { url, message });
-                alert('Redirecting to secure payment... (Simulated payment redirection for now)');
+        checkoutButton.addEventListener('click', async () => {
+            const { error } = await stripe.redirectToCheckout({
+                lineItems: [{ price: 'PRICE_ID_FOR_9_99', quantity: 1 }], // Replace with your Price ID
+                mode: 'payment',
+                successUrl: 'https://yourdomain.com/success?session_id={CHECKOUT_SESSION_ID}', // Update your success URL
+                cancelUrl: 'https://yourdomain.com/cancel',
+            });
 
-            } catch (error) {
-                statusDiv.textContent = 'There was an error. Please try again.';
-                statusDiv.className = 'mt-4 text-sm text-red-600';
+            if (error) {
                 console.error('Error:', error);
             }
         });
